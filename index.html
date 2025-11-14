@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Merry Christmas from PPM</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+  <a id="logo-link" href="https://www.pp-media.ch" target="_blank">
+  <img id="top-left-logo" src="links/PPM_Logo.svg" alt="Logo">
+</a>
+
+
+
+  <div id="loading-screen">
+    <img src="links/merry-christmas.gif" alt="Merry Christmas" id="loading-gif">
+  </div>
+  <div id="snow-container"></div>
+
+  <div class="iframe-wrapper" id="game-container">
+    <iframe src="https://play.unity.com/api/v1/games/game/f3e03a2b-9f28-4a9b-b982-2d22dde36044/build/latest/frame" allowfullscreen></iframe>
+  </div>
+  <div class="footer"></div>
+
+  <script>
+    (function () {
+      const container = document.getElementById('snow-container');
+      const MAX_SNOWFLAKES_ON_SCREEN = 80;
+      const SPAWN_INTERVAL_MS = 350;
+
+      function createSnowflake() {
+  if (container.childElementCount > MAX_SNOWFLAKES_ON_SCREEN) return;
+
+  const flake = document.createElement('div');
+  flake.className = 'snowflake';
+
+  // 🔄 Random image choice (1–4)
+  const images = [
+    'links/schneeflocke_01.png',
+    'links/schneeflocke_02.png',
+    'links/schneeflocke_03.png',
+    'links/schneeflocke_04.png',
+    'links/schneeflocke_05.png',
+    'links/schneeflocke_06.png'
+  ];
+  flake.style.backgroundImage = `url('${images[Math.floor(Math.random() * images.length)]}')`;
+
+  // Random size
+  const base = 70;
+  const size = base * (0.8 + Math.random() * 0.4);
+  flake.style.width = size + 'px';
+  flake.style.height = size + 'px';
+
+  // Random horizontal start
+  flake.style.left = Math.random() * 100 + 'vw';
+
+  // Above screen
+  flake.style.top = '-10vh';
+
+  // Random angle
+  const angle = (Math.random() * 60) - 30;
+  flake.style.setProperty('--rotate-angle', angle + 'deg');
+
+  // Fall duration 8–14s
+  flake.style.animationDuration = (8 + Math.random() * 6) + 's';
+
+  // Random stagger
+  flake.style.animationDelay = (Math.random() * 2) + 's';
+
+  container.appendChild(flake);
+
+  flake.addEventListener('animationend', () => flake.remove());
+}
+
+
+      setInterval(createSnowflake, SPAWN_INTERVAL_MS);
+    })();
+
+
+  </script>
+
+</body>
+</html>
