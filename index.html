@@ -55,7 +55,7 @@
   flake.style.backgroundImage = `url('${images[Math.floor(Math.random() * images.length)]}')`;
 
   // Random size
-const base = Math.max(window.innerWidth, window.innerHeight) / 36;
+const base = window.innerHeight * 0.05;
 
   const size = base * (0.8 + Math.random() * 0.4);
   flake.style.width = size + 'px';
