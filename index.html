@@ -55,7 +55,7 @@
   flake.style.backgroundImage = `url('${images[Math.floor(Math.random() * images.length)]}')`;
 
   // Random size
-  const base = 70;
+  const base = visualViewport.width/50;
   const size = base * (0.8 + Math.random() * 0.4);
   flake.style.width = size + 'px';
   flake.style.height = size + 'px';
