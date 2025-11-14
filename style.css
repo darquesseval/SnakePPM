@@ -1,0 +1,132 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: "Jersey 10", sans-serif;
+  background-color: #000;
+  background-image: url('links/background.png');
+    background-position: top center;
+    background-size: cover;
+  background-blend-mode: lighten;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.iframe-wrapper {
+  position: relative;
+  width: 86vw;
+  height: 86vh;
+  border-radius: 20px;
+
+  box-shadow:
+    0 0 10px rgba(88, 10, 88, 0.3),
+    0 0 20px rgba(110, 3, 97, 0.2);
+
+  box-sizing: border-box;
+  /* Fade in AFTER loader */
+  opacity: 0;
+  animation: gameFade 1s ease forwards;
+  animation-delay: 10s;
+  z-index: 5;
+}
+
+.iframe-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 14px;
+  background-color: #000;
+}
+
+#loading-screen {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100000; 
+  animation: loaderFade 1s ease forwards;
+  animation-delay: 10s;
+    pointer-events: none;
+  border-radius: 20px;
+}
+#loading-gif {
+  width:30vw;
+}
+
+/* Fades loader out */
+@keyframes loaderFade {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Fades game in */
+@keyframes gameFade {
+  to {
+    opacity: 1;
+  }
+}
+
+#snow-container {
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+  overflow: hidden;
+
+  z-index: 2; 
+}
+
+.snowflake {
+  --rotate-angle: 0deg;
+
+  position: absolute;
+  top: -10vh;
+  width: 24px;
+  height: 24px;
+
+  background-image: none;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  opacity: 0.85;
+  animation-name: snowfall;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(var(--rotate-angle));
+  }
+  50% {
+    transform: translate3d(15px, 50vh, 0) rotate(calc(var(--rotate-angle) + 90deg));
+  }
+  100% {
+    transform: translate3d(-15px, 120vh, 0) rotate(calc(var(--rotate-angle) + 180deg));
+  }
+}
+
+#top-left-logo {
+  top: 20px;
+  left: 20px;
+height: 7vh;
+  width: auto;
+  z-index: 500000;    
+  pointer-events: none; 
+  user-select: none;
+  align-self: center;
+  padding: 20px;
+}
+
+.footer {
+  height: 7vh;
+}
