@@ -57,7 +57,8 @@ html, body {
   border-radius: 10px;
 }
 #loading-gif {
-  width:30vw;
+  max-width: 90vw;
+  max-height: 90vh;
 }
 
 /* Fades loader out */
