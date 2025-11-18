@@ -44,6 +44,7 @@ html, body {
 
 #loading-screen {
   position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
   height: 100vh;
   width: 100vw;
   inset: 0;
@@ -51,8 +52,8 @@ html, body {
   align-items: center;
   justify-content: center;
   z-index: 100000; 
-  animation: loaderFade 1s ease forwards;
-  animation-delay: 7s;
+  animation: loaderFade 2s ease forwards;
+  animation-delay: 6s;
   pointer-events: none;
   border-radius: 10px;
 }
