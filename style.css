@@ -30,7 +30,7 @@ html, body {
   /* Fade in AFTER loader */
   opacity: 0;
   animation: gameFade 1s ease forwards;
-  animation-delay: 10s;
+  animation-delay: 8s;
   z-index: 5;
 }
 
@@ -52,9 +52,9 @@ html, body {
   justify-content: center;
   z-index: 100000; 
   animation: loaderFade 1s ease forwards;
-  animation-delay: 10s;
-    pointer-events: none;
-  border-radius: 20px;
+  animation-delay: 7s;
+  pointer-events: none;
+  border-radius: 10px;
 }
 #loading-gif {
   width:30vw;
