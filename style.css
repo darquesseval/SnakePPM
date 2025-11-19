@@ -30,7 +30,7 @@ html, body {
   /* Fade in AFTER loader */
   opacity: 0;
   animation: gameFade 1s ease forwards;
-  animation-delay: 9s;
+  animation-delay: 8s;
   z-index: 5;
 }
 
