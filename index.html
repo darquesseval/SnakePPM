@@ -85,7 +85,9 @@ const base = window.innerHeight * 0.05;
 
       setInterval(createSnowflake, SPAWN_INTERVAL_MS);
     })();
-
+    
+  const gif = document.getElementById("loading-gif");
+  gif.src = gif.src.split("?")[0] + "?t=" + Date.now();
 
   </script>
 

@@ -30,7 +30,7 @@ html, body {
   /* Fade in AFTER loader */
   opacity: 0;
   animation: gameFade 1s ease forwards;
-  animation-delay: 8s;
+  animation-delay: 9s;
   z-index: 5;
 }
 
@@ -53,7 +53,7 @@ html, body {
   justify-content: center;
   z-index: 100000; 
   animation: loaderFade 2s ease forwards;
-  animation-delay: 6s;
+  animation-delay: 7s;
   pointer-events: none;
   border-radius: 10px;
 }
