@@ -29,8 +29,8 @@ html, body {
   box-sizing: border-box;
   /* Fade in AFTER loader */
   opacity: 0;
-  animation: gameFade 1s ease forwards;
-  animation-delay: 8s;
+  animation: gameFade 2s ease forwards;
+  animation-delay: 6s;
   z-index: 5;
 }
 
